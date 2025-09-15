@@ -1,5 +1,7 @@
 "use client";
 
+import React from 'react';
+
 type ButtonProps = {
   label?: string;
   labelKey?: string; // i18n key; if provided takes precedence over label
@@ -10,6 +12,7 @@ type ButtonProps = {
 
 import { t } from "@/lib/i18n";
 import { useLocale } from "@/context/LocaleContext";
+import { COLORS } from "@/constants/colors";
 
 // Convert hex (#RRGGBB) to rgba string with given alpha
 const hexToRgba = (hex: string, alpha: number) => {
@@ -34,37 +37,51 @@ export default function Button({ label, labelKey, color, className = "", onClick
     padding: '14px 24px',
   } as React.CSSProperties;
 
-  return (
-    <>
-      <button
-        type="button"
-        onClick={onClick}
-        aria-label={finalLabel}
-        className={`inline-flex items-center justify-center whitespace-nowrap leading-none rounded-2xl text-base md:text-lg font-medium backdrop-blur-md border focus-visible:outline-none transition-colors ${hasColor ? 'colored text-gray-900' : 'bg-transparent text-white border-white/30 hover:bg-white/80 hover:text-gray-900 hover:border-white focus-visible:bg-white/80 focus-visible:text-gray-900 focus-visible:border-white'} ${className}`}
-        style={{
-          ...baseStyle,
-          // CSS vars for colored variant
-          ['--btn-bg' as any]: bgSemi,
-          ['--btn-bg-hover' as any]: bgHover,
-          ['--btn-bd' as any]: borderSemi,
-          ['--btn-bd-hover' as any]: borderHover,
-        }}
-      >
-        {finalLabel}
-      </button>
+  const buttonStyle: React.CSSProperties = {
+    display: 'inline-flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    whiteSpace: 'nowrap',
+    lineHeight: 1,
+    borderRadius: '16px',
+    fontSize: '16px',
+    fontWeight: 500,
+    backdropFilter: 'blur(12px)',
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: hasColor ? borderSemi : 'rgba(255, 255, 255, 0.3)',
+    outline: 'none',
+    transition: 'all 0.3s ease',
+    background: hasColor ? bgSemi : 'transparent',
+    color: hasColor ? 'white' : 'white',
+    cursor: 'pointer',
+    ...baseStyle
+  };
 
-      {/* Hover styles for colored variant */}
-      <style jsx>{`
-        button.colored {
-          background: var(--btn-bg);
-          border-color: var(--btn-bd);
-          color: #111315;
-        }
-        button.colored:hover, button.colored:focus-visible {
-          background: var(--btn-bg-hover);
-          border-color: var(--btn-bd-hover);
-        }
-      `}</style>
-    </>
+  const [isHovered, setIsHovered] = React.useState(false);
+  const [isFocused, setIsFocused] = React.useState(false);
+
+  const hoverStyle: React.CSSProperties = (isHovered || isFocused) ? {
+    background: hasColor ? bgHover : 'rgba(255, 255, 255, 0.8)',
+    borderColor: hasColor ? borderHover : 'white',
+    color: hasColor ? COLORS.graphite : '#111315'
+  } : {};
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={finalLabel}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+      style={{
+        ...buttonStyle,
+        ...hoverStyle
+      }}
+    >
+      {finalLabel}
+    </button>
   );
 }

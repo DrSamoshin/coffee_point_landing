@@ -1,7 +1,7 @@
 export const LOCALES = ['en', 'ru'] as const;
 export type Locale = typeof LOCALES[number];
 
-export const DEFAULT_LOCALE: Locale = 'en';
+export const DEFAULT_LOCALE: Locale = 'ru';
 
 export const CONTENT_EN = {
   ui: {
@@ -11,21 +11,21 @@ export const CONTENT_EN = {
     }
   },
   meta: {
-    title: 'Coffee Point - Next Generation Coffee Shop Management',
-    description: 'Complete solution for coffee shop management: from orders to analytics. Increase profits and streamline processes with Coffee Point.',
+    title: 'Coffee Point CRM - Next Generation Coffee Shop Management',
+    description: 'Complete solution for coffee shop management: from orders to analytics. Increase profits and streamline processes with Coffee Point CRM.',
   },
   hero: {
-    title: 'Manage your coffee shop easily and efficiently',
-    subtitle: 'Complete solution for modern coffee shops',
-    description: 'Automate orders, control inventory, analyze sales and increase profits.',
+    title: 'Coffee Point CRM',
+    subtitle: 'Full business control and planning, even if you are on the other side of the planet',
+    description: 'We are not just "another CRM for coffee shops". We have gone through the entire process ourselves — and we live it every day.',
     cta: {
       primary: 'Try for free',
       secondary: 'Learn more'
     }
   },
   about: {
-    title: 'Problems we solve',
-    subtitle: 'Coffee shop owners face multiple challenges every day',
+    title: 'Staff is dumb. Money is leaking. You are fed up.',
+    subtitle: 'We know how a coffee shop works from the inside: That is why Coffee Point CRM works the way an owner needs it: no fluff, no extras, only what really saves the business.',
     problems: [
       {
         title: 'Time wasted on accounting',
@@ -42,59 +42,47 @@ export const CONTENT_EN = {
     ]
   },
   features: {
-    title: 'All tools in one solution',
-    subtitle: 'Coffee Point combines order management, inventory and analytics',
+    title: 'Peace, Freedom and AI Analytics',
+    subtitle: 'Everything you need for complete control of your business',
     items: [
-      {
-        title: 'Order System',
-        description: 'Intuitive interface for quick order processing',
-        benefits: ['Reduced service time', 'Fewer mistakes', 'Payment integration']
-      },
-      {
-        title: 'Inventory Management',
-        description: 'Automatic stock control and purchasing',
-        benefits: ['Low stock alerts', 'Supply history', 'Demand forecasting']
-      },
-      {
-        title: 'Sales Analytics',
-        description: 'Detailed reports and forecasts for decision making',
-        benefits: ['Product popularity analysis', 'Profit reports', 'Sales forecasting']
-      }
+      'AI-analytics and forecasting: know in advance how much you will sell and what to buy.',
+      'Barista app: checklists, orders, discounts, product control. No excuses.',
+      'Owner app: reports, inventory, purchases, shifts — everything in your pocket.'
     ]
   },
   pricing: {
-    title: 'Choose the right plan',
-    subtitle: 'Transparent pricing with no hidden fees',
+    title: 'How much does peace cost?',
+    subtitle: 'Cheaper than your losses from inefficient management.',
     plans: [
       {
-        name: 'Basic',
-        price: '$49',
-        period: 'per month',
-        description: 'For small coffee shops',
-        features: ['Up to 100 orders per day', 'Basic analytics', 'Email support'],
+        name: 'Solo',
+        price: '49 BYN',
+        period: '/ month',
+        description: 'for one coffee shop',
+        features: ['Barista app', 'Owner app', 'AI analytics and forecasting', 'Inventory and procurement control'],
         popular: false
       },
       {
-        name: 'Optimal',
-        price: '$99',
-        period: 'per month',
-        description: 'Most popular plan',
-        features: ['Up to 500 orders per day', 'Advanced analytics', 'Priority support', 'Delivery integration'],
+        name: 'Network',
+        price: '199 BYN',
+        period: '/ month',
+        description: 'for coffee shop chains',
+        features: ['Everything from Solo plan', 'Management of up to 5 locations', 'Centralized analytics and planning', '24/7 support'],
         popular: true
       },
       {
-        name: 'Professional',
+        name: 'Custom',
         price: 'Custom',
         period: '',
-        description: 'For coffee shop chains',
-        features: ['Unlimited orders', 'Custom reports', 'Personal manager', 'API access'],
+        description: 'for large chains',
+        features: ['Custom configuration for your processes', 'Personal manager', 'ERP / POS integrations', 'White-label under your brand'],
         popular: false
       }
     ]
   },
   testimonials: {
     title: 'Our expertise',
-    subtitle: 'More than 50 coffee shops already use Coffee Point',
+    subtitle: 'More than 50 coffee shops already use Coffee Point CRM',
     expert: {
       name: 'Alex Petrov',
       role: 'Coffee Point Founder',
@@ -114,15 +102,15 @@ export const CONTENT_EN = {
     ]
   },
   cta: {
-    title: 'Start managing your coffee shop efficiently today',
-    subtitle: 'Join more than 50 coffee shops that have already automated their business',
+    title: 'Stop fighting fires. Time to drink coffee calmly.',
+    subtitle: 'Peace and Freedom — that is Coffee Point CRM',
     buttons: {
-      primary: 'Try for free',
+      primary: 'Try Coffee Point CRM Free',
       secondary: 'Contact us'
     }
   },
   footer: {
-    copyright: '© 2024 Coffee Point. All rights reserved.',
+    copyright: '© 2024 Coffee Point CRM. All rights reserved.',
     links: {
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
@@ -144,21 +132,21 @@ export const CONTENT_RU = {
     }
   },
   meta: {
-    title: 'Coffee Point - Управление кофейней нового поколения',
-    description: 'Комплексное решение для управления кофейней: от заказов до аналитики. Увеличьте прибыль и упростите процессы с Coffee Point.',
+    title: 'Coffee Point CRM - Управление кофейней нового поколения',
+    description: 'Комплексное решение для управления кофейней: от заказов до аналитики. Увеличьте прибыль и упростите процессы с Coffee Point CRM.',
   },
   hero: {
-    title: 'Управляйте кофейней легко и эффективно',
-    subtitle: 'Комплексное решение для современных кофеен',
-    description: 'Автоматизируйте заказы, контролируйте склад, анализируйте продажи и увеличивайте прибыль.',
+    title: 'Coffee Point CRM',
+    subtitle: 'Полный контроль и планирование бизнеса, даже если ты на другом конце планеты',
+    description: 'Мы не просто "ещё одна CRM для кофеен". Мы прошли весь процесс сами — и живём этим каждый день.',
     cta: {
       primary: 'Попробовать бесплатно',
       secondary: 'Узнать больше'
     }
   },
   about: {
-    title: 'Проблемы, которые мы решаем',
-    subtitle: 'Владельцы кофеен сталкиваются с множеством вызовов каждый день',
+    title: 'Персонал тупит. Деньги утекают. Ты задолбался?',
+    subtitle: 'Мы знаем, как устроена кофейня изнутри: Именно поэтому Coffee Point CRM работает так, как надо владельцу: без воды, без лишнего, только то, что реально спасает бизнес.',
     problems: [
       {
         title: 'Потери времени на учет',
@@ -175,59 +163,47 @@ export const CONTENT_RU = {
     ]
   },
   features: {
-    title: 'Все инструменты в одном решении',
-    subtitle: 'Coffee Point объединяет управление заказами, складом и аналитикой',
+    title: 'Спокойствие, Свобода и AI аналитика',
+    subtitle: 'Полный контроль над твоим бизнесом в твоих руках',
     items: [
-      {
-        title: 'Система заказов',
-        description: 'Интуитивный интерфейс для быстрого оформления заказов',
-        benefits: ['Сокращение времени обслуживания', 'Снижение ошибок', 'Интеграция с оплатой']
-      },
-      {
-        title: 'Управление складом',
-        description: 'Автоматический контроль остатков и закупок',
-        benefits: ['Предупреждения о низких остатках', 'История поставок', 'Прогнозирование потребностей']
-      },
-      {
-        title: 'Аналитика продаж',
-        description: 'Детальные отчеты и прогнозы для принятия решений',
-        benefits: ['Анализ популярности товаров', 'Отчеты по прибыли', 'Прогнозы продаж']
-      }
+      'AI-аналитика и прогнозирование: знаешь наперёд, сколько продашь и что закупить.',
+      'Приложение для баристы: чек-листы, заказы, скидки, контроль продуктов. Никаких оправданий.',
+      'Приложение для владельца: отчёты, склад, закупки, смены — всё в кармане.'
     ]
   },
   pricing: {
-    title: 'Выберите подходящий тариф',
-    subtitle: 'Прозрачные цены без скрытых платежей',
+    title: 'Сколько стоит спокойствие?',
+    subtitle: 'Дешевле, чем твои потери от неэффективного управления.',
     plans: [
       {
-        name: 'Базовый',
-        price: '2 990',
-        period: 'в месяц',
-        description: 'Для небольших кофеен',
-        features: ['До 100 заказов в день', 'Базовая аналитика', 'Поддержка по email'],
+        name: 'Solo',
+        price: '49 BYN',
+        period: '/ мес',
+        description: 'для одной кофейни',
+        features: ['Приложение для баристы', 'Приложение для владельца', 'AI-аналитика и прогнозирование', 'Контроль склада и закупок'],
         popular: false
       },
       {
-        name: 'Оптимальный',
-        price: '4 990',
-        period: 'в месяц',
-        description: 'Самый популярный тариф',
-        features: ['До 500 заказов в день', 'Расширенная аналитика', 'Приоритетная поддержка', 'Интеграция с доставкой'],
+        name: 'Network',
+        price: '199 BYN',
+        period: '/ мес',
+        description: 'для сети кофеен',
+        features: ['Всё из тарифа Solo', 'Управление до 5 точками', 'Централизованная аналитика и планирование', 'Поддержка 24/7'],
         popular: true
       },
       {
-        name: 'Профессиональный',
-        price: 'По запросу',
+        name: 'Custom',
+        price: 'Договорная',
         period: '',
-        description: 'Для сетей кофеен',
-        features: ['Неограниченные заказы', 'Индивидуальные отчеты', 'Персональный менеджер', 'API доступ'],
+        description: 'для больших сетей',
+        features: ['Индивидуальная настройка под процессы', 'Персональный менеджер', 'Интеграции с вашей ERP / POS', 'White-label под ваш бренд'],
         popular: false
       }
     ]
   },
   testimonials: {
     title: 'Наша экспертность',
-    subtitle: 'Более 50 кофеен уже используют Coffee Point',
+    subtitle: 'Более 50 кофеен уже используют Coffee Point CRM',
     expert: {
       name: 'Алексей Петров',
       role: 'Основатель Coffee Point',
@@ -247,15 +223,15 @@ export const CONTENT_RU = {
     ]
   },
   cta: {
-    title: 'Начните управлять кофейней эффективно уже сегодня',
-    subtitle: 'Присоединяйтесь к более чем 50 кофейням, которые уже автоматизировали свой бизнес',
+    title: 'Хватит тушить пожары. Пора пить кофе спокойно.',
+    subtitle: 'Спокойствие и Свобода — это и есть Coffee Point CRM',
     buttons: {
-      primary: 'Попробовать бесплатно',
+      primary: 'Попробовать Coffee Point CRM бесплатно',
       secondary: 'Связаться с нами'
     }
   },
   footer: {
-    copyright: '© 2024 Coffee Point. Все права защищены.',
+    copyright: '© 2024 Coffee Point CRM. Все права защищены.',
     links: {
       privacy: 'Политика конфиденциальности',
       terms: 'Условия использования',

@@ -13,7 +13,8 @@ module.exports = {
         accent: '#A47B6B',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        montserrat: ['var(--font-montserrat)', 'sans-serif'],
+        sans: ['var(--font-montserrat)', 'sans-serif'],
       },
       animation: {
         'fade-in-up': 'fadeInUp 0.5s ease-out',

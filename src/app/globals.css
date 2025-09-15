@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -15,4 +16,6 @@ body {
   line-height: 1.5;
   /* Use graphite for default text to match the requested rule */
   color: #111315;
+  overflow-x: hidden;
+  position: relative;
 }

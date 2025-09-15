@@ -19,6 +19,9 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
       const saved = localStorage.getItem("locale") as Locale | null;
       if (saved && (LOCALES as readonly string[]).includes(saved)) {
         setLocaleState(saved as Locale);
+      } else {
+        // Принудительно устанавливаем русский если нет сохранённого языка
+        setLocaleState('ru');
       }
     } catch {}
   }, []);

@@ -1,78 +1,35 @@
+"use client";
+
+import { useEffect } from 'react';
 import { ScrollBackground } from '@/components/ScrollBackground';
-import GlassCard from '@/components/ui/GlassCard';
+import HeroSection from '@/components/sections/HeroSection';
+import AboutSection from '@/components/sections/AboutSection';
+import FeaturesSection from '@/components/sections/FeaturesSection';
+import PricingSection from '@/components/sections/PricingSection';
+import CTASection from '@/components/sections/CTASection';
 
 export default function Home() {
+  useEffect(() => {
+    // Скролл в верх страницы при загрузке/обновлении
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <ScrollBackground>
-      {/* Section 1 */}
-      <div className="h-screen flex items-center justify-center p-12 pt-24">
-        <GlassCard className="p-8 md:p-12 lg:p-16 text-center shadow-2xl w-[calc(100vw-4rem)] max-w-7xl h-[calc(100vh-4rem)]">
-          <div className="flex flex-col justify-center h-full">
-            <h1 className="text-6xl font-black text-white mb-4 tracking-tight">
-              Coffee Point
-            </h1>
-            <p className="text-white/80 text-xl">
-              Scroll to see gradient changes
-            </p>
-          </div>
-        </GlassCard>
-      </div>
+      {/* Section 1 - Hero */}
+      <HeroSection />
 
-      {/* Section 2 */}
-      <div className="h-screen flex items-center justify-center p-12 pt-24">
-        <GlassCard className="p-8 md:p-12 lg:p-16 text-center shadow-2xl w-[calc(100vw-4rem)] max-w-7xl h-[calc(100vh-4rem)]">
-          <div className="flex flex-col justify-center h-full">
-            <h2 className="text-5xl font-bold text-white mb-4">
-              About Coffee Point
-            </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Professional management system for modern coffee shops
-            </p>
-          </div>
-        </GlassCard>
-      </div>
+      {/* Section 2 - About */}
+      <AboutSection />
 
-      {/* Section 3 */}
-      <div className="h-screen flex items-center justify-center p-12 pt-24">
-        <GlassCard className="p-8 md:p-12 lg:p-16 text-center shadow-2xl w-[calc(100vw-4rem)] max-w-7xl h-[calc(100vh-4rem)]">
-          <div className="flex flex-col justify-center h-full">
-            <h2 className="text-5xl font-bold text-white mb-4">
-              Features
-            </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Everything you need to run your coffee business efficiently
-            </p>
-          </div>
-        </GlassCard>
-      </div>
+      {/* Section 3 - Features */}
+      <FeaturesSection />
 
-      {/* Section 4 */}
-      <div className="h-screen flex items-center justify-center p-12 pt-24">
-        <GlassCard className="p-8 md:p-12 lg:p-16 text-center shadow-2xl w-[calc(100vw-4rem)] max-w-7xl h-[calc(100vh-4rem)]">
-          <div className="flex flex-col justify-center h-full">
-            <h2 className="text-5xl font-bold text-white mb-4">
-              Pricing
-            </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Simple and transparent pricing for every business size
-            </p>
-          </div>
-        </GlassCard>
-      </div>
+      {/* Section 4 - Pricing */}
+      <PricingSection />
 
-      {/* Section 5 */}
-      <div className="h-screen flex items-center justify-center p-12 pt-24">
-        <GlassCard className="p-8 md:p-12 lg:p-16 text-center shadow-2xl w-[calc(100vw-4rem)] max-w-7xl h-[calc(100vh-4rem)]">
-          <div className="flex flex-col justify-center h-full">
-            <h2 className="text-5xl font-bold text-white mb-4">
-              Get Started
-            </h2>
-            <p className="text-white/80 text-lg max-w-2xl mx-auto">
-              Join hundreds of coffee shops using Coffee Point
-            </p>
-          </div>
-        </GlassCard>
-      </div>
+      {/* Section 5 - CTA */}
+      <CTASection />
     </ScrollBackground>
   );
 }
