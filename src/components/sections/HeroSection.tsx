@@ -15,8 +15,8 @@ export default function HeroSection() {
             src="/CP_Stamp.png" 
             alt="Barista Boss Logo" 
             style={{ 
-              width: '120px', 
-              height: '120px', 
+              width: 'clamp(80px, 15vw, 120px)', // 80px-120px
+              height: 'clamp(80px, 15vw, 120px)', 
               display: 'block',
               margin: '0 auto'
             }} 
@@ -27,13 +27,13 @@ export default function HeroSection() {
       subtitle={t('hero.subtitle', locale)}
     >
       <div style={{ 
-        marginTop: '32px',
-        maxWidth: '600px',
-        margin: '32px auto 0 auto'
+        marginTop: 'clamp(20px, 5vw, 32px)',
+        maxWidth: 'clamp(300px, 80vw, 600px)', // Адаптивная ширина
+        margin: 'clamp(20px, 5vw, 32px) auto 0 auto'
       }}>
         <p style={{
           color: 'rgba(255, 255, 255, 0.8)',
-          fontSize: '20px',
+          fontSize: 'clamp(16px, 3vw, 20px)', // 16px-20px
           lineHeight: '1.6',
           textAlign: 'center'
         }}>

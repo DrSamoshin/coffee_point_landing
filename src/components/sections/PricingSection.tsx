@@ -16,15 +16,17 @@ export default function PricingSection() {
       subtitle={t('pricing.subtitle', locale)}
     >
       <div style={{
-        marginTop: '40px',
+        marginTop: 'clamp(24px, 6vw, 40px)',
         display: 'flex',
         justifyContent: 'center',
         width: '100%'
       }}>
         <div style={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr 1fr',
-          gap: '24px',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Адаптивные колонки
+          gridAutoRows: '1fr', // Одинаковая высота строк
+          alignItems: 'stretch', // Растягивание до одинаковой высоты
+          gap: 'clamp(16px, 4vw, 24px)',
           maxWidth: '1000px',
           width: '100%'
         }}>

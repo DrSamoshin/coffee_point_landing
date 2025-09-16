@@ -36,7 +36,7 @@ export default function Button({ label, labelKey, color, className = "", onClick
   const borderSemi = hasColor ? (hexToRgba(color as string, 0.4) || bgSolid) : 'rgba(255,255,255,0.30)';
   const borderHover = 'white';
   const baseStyle: React.CSSProperties = {
-    padding: '14px 24px',
+    padding: 'clamp(10px, 2.5vw, 14px) clamp(16px, 4vw, 24px)', // Адаптивные отступы
   } as React.CSSProperties;
 
   const buttonStyle: React.CSSProperties = {
@@ -45,8 +45,8 @@ export default function Button({ label, labelKey, color, className = "", onClick
     justifyContent: 'center',
     whiteSpace: 'nowrap',
     lineHeight: 1,
-    borderRadius: '16px',
-    fontSize: '16px',
+    borderRadius: 'clamp(12px, 3vw, 16px)',
+    fontSize: 'clamp(14px, 3vw, 16px)',
     fontWeight: 500,
     backdropFilter: 'blur(12px)',
     borderWidth: '1px',
