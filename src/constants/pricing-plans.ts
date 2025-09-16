@@ -24,7 +24,7 @@ export const PRICING_PLANS = {
         'Централизованная аналитика и планирование', 
         'Поддержка 24/7'
       ],
-      popular: true
+      popular: false
     },
     {
       name: 'Custom',
@@ -65,7 +65,7 @@ export const PRICING_PLANS = {
         'Centralized analytics and planning', 
         '24/7 support'
       ],
-      popular: true
+      popular: false
     },
     {
       name: 'Custom',

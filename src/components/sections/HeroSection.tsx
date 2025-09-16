@@ -13,7 +13,7 @@ export default function HeroSection() {
         <div style={{ textAlign: 'center' }}>
           <img 
             src="/CP_Stamp.png" 
-            alt="Coffee Point Logo" 
+            alt="Barista Boss Logo" 
             style={{ 
               width: '120px', 
               height: '120px', 

@@ -8,6 +8,8 @@ type ButtonProps = {
   color?: string; // solid background color; if provided, no transparency
   className?: string;
   onClick?: () => void;
+  href?: string; // URL для ссылки
+  target?: string; // target для ссылки
 };
 
 import { t } from "@/lib/i18n";
@@ -24,7 +26,7 @@ const hexToRgba = (hex: string, alpha: number) => {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 };
 
-export default function Button({ label, labelKey, color, className = "", onClick }: ButtonProps) {
+export default function Button({ label, labelKey, color, className = "", onClick, href, target = "_blank" }: ButtonProps) {
   const { locale } = useLocale();
   const finalLabel = labelKey ? t(labelKey, locale) : label ?? "";
   const hasColor = Boolean(color);
@@ -67,10 +69,18 @@ export default function Button({ label, labelKey, color, className = "", onClick
     color: hasColor ? COLORS.graphite : '#111315'
   } : {};
 
+  const handleClick = () => {
+    if (href) {
+      window.open(href, target);
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <button
       type="button"
-      onClick={onClick}
+      onClick={handleClick}
       aria-label={finalLabel}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

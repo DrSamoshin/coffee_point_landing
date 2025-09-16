@@ -18,7 +18,7 @@ export default function CTASection() {
         justifyContent: 'center',
         marginTop: '48px'
       }}>
-        <Button labelKey="cta.buttons.primary" />
+        <Button labelKey="cta.buttons.primary" href="https://coffee-point-crm.web.app/" />
       </div>
     </Section>
   );
