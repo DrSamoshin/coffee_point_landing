@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useLocale } from "@/context/LocaleContext";
+import type { Locale } from "@/constants/locales";
 import Button from "@/components/ui/Button";
 
 export default function LanguageSwitcher() {
@@ -20,7 +21,7 @@ export default function LanguageSwitcher() {
 
   const toggle = () => setOpen((v) => !v);
   const select = (l: string) => {
-    setLocale(l as any);
+    setLocale(l as Locale);
     setOpen(false);
   };
 

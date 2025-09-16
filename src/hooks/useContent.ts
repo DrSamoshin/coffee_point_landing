@@ -8,7 +8,7 @@ import type { Content } from '@/constants/locales';
  */
 export function useContent(): Content {
   const { locale } = useLocale();
-  return CONTENT[locale];
+  return CONTENT[locale] as Content;
 }
 
 /**
@@ -21,11 +21,14 @@ export function useTranslation() {
     content,
     t: (path: string) => {
       const keys = path.split('.');
-      let value: any = content;
+      let value: unknown = content;
       
       for (const key of keys) {
-        value = value?.[key];
-        if (value === undefined) return path; // fallback to key
+        if (value && typeof value === 'object' && value !== null && key in value) {
+          value = (value as Record<string, unknown>)[key];
+        } else {
+          return path; // fallback to key
+        }
       }
       
       return typeof value === 'string' ? value : path;

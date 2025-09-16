@@ -88,6 +88,6 @@ export type PricingPlan = {
   price: string;
   period: string;
   description: string;
-  features: string[];
+  features: readonly string[];
   popular: boolean;
 };
